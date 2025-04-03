@@ -1,5 +1,7 @@
 # One Nail. Two Nails. Three Nails...
 
+An incremental game, a clicker game, a tap game and an idle game.
+
 ## Requirements
 
 - `node` : `^22.11.0`
