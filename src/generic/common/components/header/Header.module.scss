@@ -1,8 +1,18 @@
 .header {
-  border: 1px solid red;
+  position: relative;
+  height: 5rem;
+  margin-top: -5rem;
+  transition-duration: 200ms;
+  transition-property: margin-top;
+  transition-timing-function: var(--ease-expo);
+
+  &.open {
+    margin-top: 0;
+    transition-duration: 400ms;
+  }
 }
 
-.button {
-  padding: var(--spacing-s);
-  background-color: var(--color-primary);
-}
+//.button {
+//  padding: var(--spacing-s);
+//  background-color: var(--color-primary);
+//}

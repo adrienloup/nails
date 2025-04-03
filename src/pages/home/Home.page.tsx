@@ -6,7 +6,7 @@ import { LoaderComponent } from '@/src/generic/common/components/loader/Loader.c
 import { LayoutComponent } from '@/src/generic/common/components/layout/Layout.component.tsx';
 
 const IntroductionComponent = lazy(() =>
-  fallback(import('@/src/pages/home/components/introduction/Introduction.component.tsx'), 1e3)
+  fallback(import('@/src/pages/home/components/introduction/Introduction.component.tsx'), 15e2)
 );
 
 function HomePage() {
@@ -15,22 +15,18 @@ function HomePage() {
   useTitle(t('home.titlePage'));
 
   return (
-    // <Suspense
-    //   fallback={
-    //     <LoaderComponent
-    //       aria-label={t('common.loading')}
-    //       duration={1e3}
-    //     />
-    //   }
-    // >
-    //   <LayoutComponent>
-    //     <IntroductionComponent />
-    //   </LayoutComponent>
-    // </Suspense>
-    <LoaderComponent
-      aria-label={t('common.loading')}
-      duration={1e3}
-    />
+    <Suspense
+      fallback={
+        <LoaderComponent
+          aria-label={t('common.loading')}
+          duration={1e3}
+        />
+      }
+    >
+      <LayoutComponent>
+        <IntroductionComponent />
+      </LayoutComponent>
+    </Suspense>
   );
 }
 

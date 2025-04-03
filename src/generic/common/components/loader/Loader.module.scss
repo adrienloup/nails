@@ -21,6 +21,6 @@
   height: 100%;
   background-color: var(--color-solid-1);
   border-radius: 0.125rem;
-  transition: width var(--duration)ms var(--ease-quad);
+  transition: width var(--duration) ms var(--ease-quad);
   will-change: width;
 }
