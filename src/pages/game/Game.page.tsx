@@ -3,13 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { fallback } from '@/src/generic/utils/fallback.ts';
 import { useTitle } from '@/src/generic/hooks/useTitle.ts';
 import { LoaderComponent } from '@/src/generic/common/components/loader/Loader.component.tsx';
-import { LayoutComponent } from '@/src/generic/common/components/layout/Layout.component.tsx';
+import { DebugComponent } from '@/src/pages/game/components/debug/Debug.component.tsx';
+import { DashboardComponent } from '@/src/pages/game/components/dashboard/Dashboard.component.tsx';
 
-const CoreComponent = lazy(() =>
-  fallback(import('@/src/pages/game/components/core/Core.component.tsx'), 15e2)
+const LayoutComponent = lazy(() =>
+  fallback(import('@/src/generic/common/components/layout/Layout.component.tsx'), 15e2)
 );
 
 function GamePage() {
+  console.log('GamePage');
   const { t } = useTranslation();
 
   useTitle(t('game.titlePage'));
@@ -24,7 +26,8 @@ function GamePage() {
       }
     >
       <LayoutComponent>
-        <CoreComponent />
+        <DebugComponent />
+        <DashboardComponent />
       </LayoutComponent>
     </Suspense>
   );

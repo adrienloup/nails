@@ -3,10 +3,15 @@ import { useTranslation } from 'react-i18next';
 import { fallback } from '@/src/generic/utils/fallback.ts';
 import { useTitle } from '@/src/generic/hooks/useTitle.ts';
 import { LoaderComponent } from '@/src/generic/common/components/loader/Loader.component.tsx';
-import { LayoutComponent } from '@/src/generic/common/components/layout/Layout.component.tsx';
+// import { CoreComponent } from '@/src/pages/explore/components/core/Core.component.tsx';
+// import { LayoutComponent } from '@/src/generic/common/components/layout/Layout.component.tsx';
 
-const IntroductionComponent = lazy(() =>
-  fallback(import('@/src/pages/explore/components/core/Core.component.tsx'), 15e2)
+// const IntroductionComponent = lazy(() =>
+//   fallback(import('@/src/pages/explore/components/core/Core.component.tsx'), 15e2)
+// );
+
+const LayoutComponent = lazy(() =>
+  fallback(import('@/src/generic/common/components/layout/Layout.component.tsx'), 15e2)
 );
 
 function ExplorePage() {
@@ -24,7 +29,8 @@ function ExplorePage() {
       }
     >
       <LayoutComponent>
-        <IntroductionComponent />
+        tutu
+        {/*<IntroductionComponent />*/}
       </LayoutComponent>
     </Suspense>
   );

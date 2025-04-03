@@ -34,37 +34,41 @@ export const HeaderComponent = () => {
       >
         Menu
       </ButtonComponent>
-      <NavigationComponent />
-      <ButtonComponent
-        className={styles.button}
-        onClick={() => setLanguage('en')}
-      >
-        EN
-      </ButtonComponent>
-      <ButtonComponent
-        className={styles.button}
-        onClick={() => setLanguage('fr')}
-      >
-        FR
-      </ButtonComponent>
-      <ButtonComponent
-        className={styles.button}
-        onClick={() => setMode('dark')}
-      >
-        dark
-      </ButtonComponent>
-      <ButtonComponent
-        className={styles.button}
-        onClick={() => setMode('light')}
-      >
-        light
-      </ButtonComponent>
-      <ButtonComponent
-        className={styles.button}
-        onClick={() => setMode('system')}
-      >
-        system
-      </ButtonComponent>
+      {open ? (
+        <>
+          <NavigationComponent />
+          <ButtonComponent
+            className={styles.button}
+            onClick={() => setLanguage('en')}
+          >
+            EN
+          </ButtonComponent>
+          <ButtonComponent
+            className={styles.button}
+            onClick={() => setLanguage('fr')}
+          >
+            FR
+          </ButtonComponent>
+          <ButtonComponent
+            className={styles.button}
+            onClick={() => setMode('dark')}
+          >
+            dark
+          </ButtonComponent>
+          <ButtonComponent
+            className={styles.button}
+            onClick={() => setMode('light')}
+          >
+            light
+          </ButtonComponent>
+          <ButtonComponent
+            className={styles.button}
+            onClick={() => setMode('system')}
+          >
+            system
+          </ButtonComponent>
+        </>
+      ) : null}
     </header>
   );
 };

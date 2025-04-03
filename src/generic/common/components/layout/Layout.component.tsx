@@ -3,7 +3,8 @@ import { HeaderComponent } from '@/src/generic/common/components/header/Header.c
 import { FooterComponent } from '@/src/generic/common/components/footer/Footer.component.tsx';
 import { Layout } from '@/src/generic/common/components/layout/Layout.type.ts';
 
-export const LayoutComponent = ({ children }: Layout) => {
+function LayoutComponent({ children }: Layout) {
+  console.log('LayoutComponent');
   return (
     <>
       <HeaderComponent />
@@ -11,4 +12,6 @@ export const LayoutComponent = ({ children }: Layout) => {
       <FooterComponent />
     </>
   );
-};
+}
+
+export default LayoutComponent;
