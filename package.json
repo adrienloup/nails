@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "nails",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "format": "prettier . --write",
     "lint-and-format": "npm run lint && npm run format",
-    "test": "vitest",
+    "test:component": "vitest",
     "test:e2e": "npx cypress run --e2e",
     "test:e2e:open": "npx cypress open --e2e"
   },

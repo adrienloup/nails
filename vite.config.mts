@@ -8,31 +8,31 @@ export default defineConfig({
     react(),
     VitePWA({
       manifest: {
-        name: 'App',
-        short_name: 'app',
+        name: 'Nails',
+        short_name: 'nails',
         description: '',
-        start_url: '/app',
+        start_url: '/nails',
         display: 'standalone',
         theme_color: '#e6e6e6',
         background_color: '#171717',
         icons: [
           {
-            src: '/app/app-192x192.svg',
+            src: '/nails/nails-192x192.svg',
             type: 'image/svg+xml',
             sizes: '192x192',
           },
           {
-            src: '/app/app-256x256.svg',
+            src: '/nails/nails-256x256.svg',
             type: 'image/svg+xml',
             sizes: '256x256',
           },
           {
-            src: '/app/app-384x384.svg',
+            src: '/nails/nails-384x384.svg',
             type: 'image/svg+xml',
             sizes: '384x384',
           },
           {
-            src: '/app/app-512x512.svg',
+            src: '/nails/nails-512x512.svg',
             type: 'image/svg+xml',
             sizes: '512x512',
           },
@@ -40,7 +40,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/app',
+  base: '/nails',
   resolve: {
     alias: {
       '@': path.resolve('./'),

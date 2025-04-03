@@ -7,9 +7,9 @@ export const NavigationComponent = () => {
       className={styles.navigation}
       role="navigation"
     >
-      <Link to={'/app'}>Home</Link>
+      <Link to={'/nails'}>Game</Link>
       <br />
-      <Link to={'/app/page'}>page</Link>
+      <Link to={'/nails/explore'}>Explore</Link>
     </nav>
   );
 };

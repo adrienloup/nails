@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from '@/src/pages/home/Home.page.tsx';
-import PagePage from '@/src/pages/page/Page.page.tsx';
+import GamePage from '@/src/pages/game/Game.page.tsx';
+import ExplorePage from '@/src/pages/explore/Explore.page.tsx';
 import '@/src/generic/app/App.scss';
 
 function App() {
@@ -8,16 +8,16 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/app"
-          element={<HomePage />}
+          path="/nails"
+          element={<GamePage />}
         />
         <Route
-          path="/app/*"
-          element={<HomePage />}
+          path="/nails/*"
+          element={<GamePage />}
         />
         <Route
-          path="/app/page"
-          element={<PagePage />}
+          path="/nails/explore"
+          element={<ExplorePage />}
         />
       </Routes>
     </BrowserRouter>
