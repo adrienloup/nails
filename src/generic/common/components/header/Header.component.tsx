@@ -6,7 +6,6 @@ import { useHeader } from '@/src/generic/common/components/header/useHeader.ts';
 import { classNames } from '@/src/generic/utils/classNames.ts';
 import { NavigationComponent } from '@/src/generic/common/components/navigation/Navigation.component.tsx';
 import { ButtonComponent } from '@/src/generic/common/components/button/Button.component.tsx';
-import { IconComponent } from '@/src/generic/common/components/icon/Icon.component.tsx';
 import styles from '@/src/generic/common/components/header/Header.module.scss';
 
 export const HeaderComponent = () => {
@@ -33,9 +32,8 @@ export const HeaderComponent = () => {
         aria-label={open ? t('common.menu.close') : t('common.menu.open')}
         onClick={() => setOpen(!open)}
       >
-        <IconComponent icon={open ? 'menu_open' : 'menu'} />
+        Menu
       </ButtonComponent>
-      Header
       <NavigationComponent />
       <ButtonComponent
         className={styles.button}
