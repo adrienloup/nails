@@ -35,6 +35,7 @@ export const HeaderComponent = () => {
       >
         <IconComponent icon={open ? 'menu_open' : 'menu'} />
       </ButtonComponent>
+      Header
       <NavigationComponent />
       <ButtonComponent
         className={styles.button}

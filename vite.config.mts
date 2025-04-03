@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import { VitePWA } from 'vite-plugin-pwa';
 import react from '@vitejs/plugin-react';
-import path from 'path';
+import * as path from 'path';
 
 export default defineConfig({
   plugins: [
@@ -56,5 +56,12 @@ export default defineConfig({
         api: 'modern',
       },
     },
+  },
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: '@testing-library/jest-dom/vitest',
+    include: ['src/**/__tests__/*.component.spec.(ts|tsx)'],
+    exclude: ['node_modules', 'src/test/e2e/**'],
   },
 });

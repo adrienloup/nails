@@ -42,7 +42,6 @@ npm run format
 
 ```bash
 npm run test:component
-npm run test:component:open
 ```
 
 ## Checking E2E Tests
@@ -61,4 +60,6 @@ npm run test:e2e:open
 - [VitePWA](https://www.npmjs.com/package/vite-plugin-pwa)
 - [Prettier](https://prettier.io/)
 - [ESLint](https://eslint.org/)
+- [TestingLibary](https://testing-library.com/)
 - [Cypress](https://www.cypress.io/)
+- [Vitest](https://vitest.dev/)
