@@ -5,7 +5,7 @@ import { Provider } from '@/src/provider.tsx';
 import App from '@/src/generic/app/App.tsx';
 import '@/src/generic/i18n';
 
-createRoot(document.getElementById('app')!).render(
+createRoot(document.getElementById('_nails_3mma_0')!).render(
   <StrictMode>
     <Provider>
       <App />

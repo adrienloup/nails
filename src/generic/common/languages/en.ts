@@ -5,5 +5,9 @@ export const en: Translation = {
     title: 'App',
     copy: '© {{version}}',
     loading: 'Loading...',
+    menu: {
+      open: 'Open Menu',
+      close: 'Close Menu',
+    },
   },
 };
