@@ -1,14 +1,29 @@
 import { describe, expect, it } from 'vitest';
+// import { fireEvent } from '@testing-library/dom';
+import { waitFor } from '@testing-library/react';
 import { customRender } from '@/src/test/Utils.tsx';
 import { HeaderComponent } from '@/src/generic/common/components/header/Header.component.tsx';
+import styles from '@/src/generic/common/components/header/Header.module.scss';
 
 describe('Header component', () => {
-  it('Should display Header Component', () => {
-    const { getByText } = customRender(<HeaderComponent />);
+  it('should display the component', () => {
+    const header = customRender(<HeaderComponent />);
 
-    // const header = render(<HeaderComponent />);
+    expect(header.getByText('Header')).toBeDefined();
+  });
 
-    // expect(header.getByText('Header')).toBeDefined();
-    expect(getByText('Header')).toBeDefined();
+  it('should add "open" class to header when menu button is clicked', async () => {
+    const { getByRole } = customRender(<HeaderComponent />);
+    const menu = getByRole('button', { name: /menu/i });
+
+    expect(menu).toBeDefined();
+    // fireEvent.click(menu);
+
+    await waitFor(() => {
+      const header = getByRole('banner');
+      console.log(styles.open);
+      expect(header).toHaveClass(styles.header);
+      // expect(header).toHaveClass(styles.open);
+    });
   });
 });

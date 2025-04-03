@@ -3,7 +3,7 @@
   z-index: 2;
   height: 5rem;
   margin-top: -5rem;
-  transition: margin-top 200ms  var(--ease-expo);
+  transition: margin-top 200ms var(--ease-expo);
   background-color: red;
 
   &.open {

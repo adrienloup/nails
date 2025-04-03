@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { BrowserRouter } from 'react-router-dom';
 import { ReactElement, ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
