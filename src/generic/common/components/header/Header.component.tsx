@@ -7,6 +7,7 @@ import { NavigationComponent } from '@/src/generic/common/components/navigation/
 import { SettingsComponent } from '@/src/generic/common/components/settings/Settings.component.tsx';
 import { BadgeComponent } from '@/src/generic/common/components/badge/Badge.component.tsx';
 import styles from '@/src/generic/common/components/header/Header.module.scss';
+import { IconComponent } from '@/src/generic/common/components/icon/Icon.component.tsx';
 
 export const HeaderComponent = () => {
   const { t } = useTranslation();
@@ -30,6 +31,7 @@ export const HeaderComponent = () => {
         aria-label={open ? t('common.menu.close') : t('common.menu.open')}
         onClick={() => setOpen(!open)}
       >
+        <IconComponent icon={open ? 'bottom_panel_open' : 'top_panel_open'} />
         Menu
       </ButtonComponent>
       <div className={styles.inner}>
@@ -41,7 +43,8 @@ export const HeaderComponent = () => {
         ) : null}
       </div>
       <ButtonComponent className={styles.ads}>
-        <BadgeComponent value={10}>ad</BadgeComponent>
+        <BadgeComponent value={10} />
+        <IconComponent icon="right_panel_open" />
       </ButtonComponent>
     </header>
   );
