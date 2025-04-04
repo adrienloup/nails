@@ -1,24 +1,8 @@
-export interface Notification {
-  id: string;
-  text: string;
-  path: string;
-  enable: boolean;
-}
+import { Notification } from '@/src/pages/game/components/notification/Notification.type.ts';
 
-export interface Notifications {
+export interface State {
   notifications: Notification[];
   open: boolean;
 }
 
-export type Action =
-  // | { type: 'ADD'; id: string }
-  // | { type: 'REMOVE'; id: string }
-  // | { type: 'UPDATE'; id: string };
-  { type: 'TOGGLE' };
-
-// export interface Notifications {
-//   notifications: Notification[];
-//   open: boolean;
-// }
-
-// export type State = Notifications[];
+export type Action = { type: 'ENABLE'; id: string } | { type: 'DISABLE'; id: string } | { type: 'TOGGLE' };

@@ -5,4 +5,4 @@ import {
 } from '@/src/pages/game/components/notifications/Notifications.context.ts';
 
 export const useNotifications = () => useContext(NotificationsContext);
-export const useNotificationsDispatchs = () => useContext(NotificationsDispatchContext);
+export const useNotificationsDispatch = () => useContext(NotificationsDispatchContext);

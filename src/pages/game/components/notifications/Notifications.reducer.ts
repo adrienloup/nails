@@ -1,24 +1,28 @@
-import { Action, Notifications } from '@/src/pages/game/components/notifications/Notifications.type.ts';
+import { Action, State } from '@/src/pages/game/components/notifications/Notifications.type.ts';
 
-export const notificationsReducer = (state: Notifications, action: Action): Notifications => {
+export const notificationsReducer = (state: State, action: Action): State => {
   switch (action.type) {
     case 'TOGGLE':
       return {
         ...state,
         open: !state.open,
       };
-    // case 'ADD':
-    //   return state.map((notification) =>
-    //     notification.id === action.id ? { ...notification, enable: true, animate: true } : notification
-    //   );
-    // case 'REMOVE':
-    //   return state.map((notification) =>
-    //     notification.id === action.id ? { ...notification, enable: false } : notification
-    //   );
-    // case 'UPDATE':
-    //   return state.map((notification) =>
-    //     notification.id === action.id ? { ...notification, animate: false } : notification
-    //   );
+    case 'ENABLE':
+      const enabledNotifications = state.notifications.map((notification) =>
+        notification.id === action.id ? { ...notification, enable: true } : notification
+      );
+      return {
+        ...state,
+        notifications: enabledNotifications,
+      };
+    case 'DISABLE':
+      const disabledNotifications = state.notifications.map((notification) =>
+        notification.id === action.id ? { ...notification, enable: false } : notification
+      );
+      return {
+        ...state,
+        notifications: disabledNotifications,
+      };
     default:
       return state;
   }
