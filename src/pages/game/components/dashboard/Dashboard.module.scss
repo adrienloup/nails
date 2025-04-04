@@ -1,3 +1,5 @@
 .dashboard {
-  padding: var(--spacing-l) var(--spacing-l) var(--spacing-m);
+  display: flex;
+  flex-direction: column;
+  padding-top: 2.5rem;
 }

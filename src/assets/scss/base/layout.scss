@@ -11,7 +11,7 @@
 
 body {
   overflow-x: hidden;
-  background-color: var(--color-1);
+  background-color: var(--color-neutral-1);
   line-height: 1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,12 +20,12 @@ body {
   font-family: var(--font-text), sans-serif;
   font-weight: normal;
   font-size: 16px;
-  color: var(--color-2);
+  color: var(--color-1);
 }
 
 #_nails_3mma_0 {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--color-3);
+  background-color: var(--color-2);
 }

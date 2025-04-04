@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { TitleComponent } from '@/src/generic/common/components/title/Title.component.tsx';
 
-function CoreComponent() {
+export const CoreComponent = () => {
   const { t } = useTranslation();
 
   return (
@@ -9,6 +9,4 @@ function CoreComponent() {
       <TitleComponent>{t('explore.title')}</TitleComponent>
     </>
   );
-}
-
-export default CoreComponent;
+};

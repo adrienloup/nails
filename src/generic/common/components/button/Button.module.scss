@@ -9,6 +9,11 @@
   font-weight: normal;
   cursor: pointer;
 
+
+  &:focus-visible {
+    outline: 0.15rem solid var(--color-solid-4);
+  }
+
   &:disabled {
     opacity: 0.5;
     pointer-events: none;

@@ -1,17 +1,15 @@
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '@/src/generic/i18n/useLanguage.ts';
-import { useMode } from '@/src/generic/mode/useMode.ts';
 import { useHeader } from '@/src/generic/common/components/header/useHeader.ts';
 import { classNames } from '@/src/generic/utils/classNames.ts';
-import { NavigationComponent } from '@/src/generic/common/components/navigation/Navigation.component.tsx';
 import { ButtonComponent } from '@/src/generic/common/components/button/Button.component.tsx';
+import { NavigationComponent } from '@/src/generic/common/components/navigation/Navigation.component.tsx';
+import { SettingsComponent } from '@/src/generic/common/components/settings/Settings.component.tsx';
+import { BadgeComponent } from '@/src/generic/common/components/badge/Badge.component.tsx';
 import styles from '@/src/generic/common/components/header/Header.module.scss';
 
 export const HeaderComponent = () => {
   const { t } = useTranslation();
-  const [, setLanguage] = useLanguage();
-  const [, setMode] = useMode();
   const [open, setOpen] = useHeader();
 
   useEffect(() => {
@@ -34,41 +32,17 @@ export const HeaderComponent = () => {
       >
         Menu
       </ButtonComponent>
-      {open ? (
-        <>
-          <NavigationComponent />
-          <ButtonComponent
-            className={styles.button}
-            onClick={() => setLanguage('en')}
-          >
-            EN
-          </ButtonComponent>
-          <ButtonComponent
-            className={styles.button}
-            onClick={() => setLanguage('fr')}
-          >
-            FR
-          </ButtonComponent>
-          <ButtonComponent
-            className={styles.button}
-            onClick={() => setMode('dark')}
-          >
-            dark
-          </ButtonComponent>
-          <ButtonComponent
-            className={styles.button}
-            onClick={() => setMode('light')}
-          >
-            light
-          </ButtonComponent>
-          <ButtonComponent
-            className={styles.button}
-            onClick={() => setMode('system')}
-          >
-            system
-          </ButtonComponent>
-        </>
-      ) : null}
+      <div className={styles.inner}>
+        {open ? (
+          <>
+            <NavigationComponent />
+            <SettingsComponent />
+          </>
+        ) : null}
+      </div>
+      <ButtonComponent className={styles.ads}>
+        <BadgeComponent value={10}>ad</BadgeComponent>
+      </ButtonComponent>
     </header>
   );
 };
