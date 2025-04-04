@@ -15,7 +15,7 @@ createRoot(document.getElementById('_nails_3mma_0')!).render(
 
 console.log(
   `%c[App]%c${version}%c@jff`,
-  'padding: 4px 3px 3px; background: #252529; font-weight: bold; color: #4800ff;',
-  'padding: 4px 3px 3px; background: #4800ff; font-weight: bold; color: #252529;',
-  'padding: 4px 3px 3px; background: #252529; font-weight: bold; color: #4800ff;'
+  'padding: 4px 3px 3px; background: #252529; font-weight: bold; color: #7543ff;',
+  'padding: 4px 3px 3px; background: #7543ff; font-weight: bold; color: #252529;',
+  'padding: 4px 3px 3px; background: #252529; font-weight: bold; color: #7543ff;'
 );

@@ -1,4 +1,7 @@
 .footer {
-  padding: var(--spacing-m);
-  text-align: right;
+  display: flex;
+  height: 2rem;
+  padding: 0 var(--spacing-s);
+  align-items: center;
+  justify-content: flex-end;
 }

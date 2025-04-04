@@ -3,16 +3,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-s);
   border: none;
   line-height: 1;
   text-decoration: none;
   font-weight: normal;
   cursor: pointer;
 
-
   &:focus-visible {
-    outline: 0.15rem solid var(--color-solid-4);
+    outline: 0.175rem solid var(--color-solid-4);
   }
 
   &:disabled {

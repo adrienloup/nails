@@ -1,20 +1,18 @@
 import { CardComponent } from '@/src/generic/common/components/card/Card.component.tsx';
 import { TitleComponent } from '@/src/generic/common/components/title/Title.component.tsx';
-import { ArtisanalComponent } from '@/src/pages/game/components/dashboard/manufacturing/Artisanal.component.tsx';
-import { ProductionPerSecondComponent } from '@/src/pages/game/components/dashboard/manufacturing/ProductionPerSecond.component.tsx';
 import styles from '@/src/generic/common/components/card/Card.module.scss';
 
-export const ManufacturingComponent = () => {
+export const TechnologyComponent = () => {
   return (
     <CardComponent>
       <TitleComponent
         tag="h2"
         className={styles.title}
       >
-        manufacturing
+        technology
       </TitleComponent>
-      <ArtisanalComponent />
-      <ProductionPerSecondComponent />
+      TechnologyComponent
+      <div style={{ height: '2000px' }}></div>
     </CardComponent>
   );
 };

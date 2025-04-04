@@ -14,15 +14,11 @@ export function LanguageProvider({ children }: { children: Children }) {
     document.documentElement.lang = i18n.language;
   }, [language]);
 
-  const onLangueChange = useCallback((newLangue: Language) => {
+  const onChange = useCallback((newLangue: Language) => {
     setLanguage(newLangue);
     i18n.changeLanguage(newLangue);
     document.documentElement.lang = i18n.language;
   }, []);
 
-  return (
-    <LanguageContext.Provider value={[language, onLangueChange]}>
-      {children}
-    </LanguageContext.Provider>
-  );
+  return <LanguageContext.Provider value={[language, onChange]}>{children}</LanguageContext.Provider>;
 }

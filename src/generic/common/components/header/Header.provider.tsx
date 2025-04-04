@@ -5,8 +5,7 @@ import { Children } from '@/src/generic/types/Children.type.ts';
 
 export function HeaderProvider({ children }: { children: Children }) {
   const [header, setHeader] = useLocalStorage<boolean>('_header_3mma_0', false);
+  const onchange = useCallback((open: boolean) => setHeader(open), []);
 
-  const handleChange = useCallback((open: boolean) => setHeader(open), []);
-
-  return <HeaderContext.Provider value={[header, handleChange]}>{children}</HeaderContext.Provider>;
+  return <HeaderContext.Provider value={[header, onchange]}>{children}</HeaderContext.Provider>;
 }
