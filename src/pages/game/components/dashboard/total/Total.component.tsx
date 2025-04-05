@@ -12,7 +12,7 @@ export const TotalComponent = () => {
         className={styles.number}
         value={10000000000000000000000000000}
       />
-      <div className={styles.label}>nail count crunched</div>
+      <div className={styles.label}>Wire nails</div>
     </TitleComponent>
   );
 };

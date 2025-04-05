@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   useNotifications,
   useNotificationsDispatch,
 } from '@/src/generic/common/components/notifications/useNotifications.ts';
 import { classNames } from '@/src/generic/utils/classNames.ts';
 import { ButtonComponent } from '@/src/generic/common/components/button/Button.component.tsx';
-// import { BadgeComponent } from '@/src/generic/common/components/badge/Badge.component.tsx';
 import { NotificationComponent } from '@/src/generic/common/components/notification/Notification.component.tsx';
-// import { IconComponent } from '@/src/generic/common/components/icon/Icon.component.tsx';
 import { Notification } from '@/src/generic/common/components/notification/Notification.type.ts';
 import styles from '@/src/generic/common/components/notifications/Notifications.module.scss';
 
 export const NotificationsComponent = () => {
+  const { t } = useTranslation();
   const dispatch = useNotificationsDispatch();
   const state = useNotifications();
 
@@ -25,28 +25,28 @@ export const NotificationsComponent = () => {
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onToggle();
+      if (e.key === 'Escape' && state.open) onToggle();
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [onToggle]);
+  }, [state.open, onToggle]);
 
   return (
     <div
+      id="notifications"
       className={classNames([styles.notifications, state.open ? styles.open : ''])}
       role="complementary"
+      aria-labelledby="notificationsbutton"
     >
       <ButtonComponent
+        id="notificationsbutton"
         className={styles.button}
+        aria-label={state.open ? t('common.notifications.close') : t('common.notifications.open')}
         aria-expanded={state.open}
+        aria-controls="notifications"
         onClick={onToggle}
       >
-        {notView} notifs
-        {/*<BadgeComponent value={notView}>*/}
-        {/*<IconComponent*/}
-        {/*  icon={total > 0 ? 'notifications_active' : 'notifications'}*/}
-        {/*/>*/}
-        {/*</BadgeComponent>*/}
+        {notView} noti
       </ButtonComponent>
       <div className={styles.inner}>
         {total > 0 ? (

@@ -8,5 +8,9 @@ export const fr: Translation = {
       open: 'Ouvrir le menu',
       close: 'Fermer le menu',
     },
+    notifications: {
+      open: 'Ouvrir les notifications',
+      close: 'Fermer les notifications',
+    },
   },
 };

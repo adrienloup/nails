@@ -8,5 +8,9 @@ export const en: Translation = {
       open: 'Open Menu',
       close: 'Close Menu',
     },
+    notifications: {
+      open: 'Open notifications',
+      close: 'Close notifications',
+    },
   },
 };

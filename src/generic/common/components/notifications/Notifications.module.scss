@@ -1,45 +1,17 @@
-//$value: 20rem;
-
 .notifications {
-  //grid-column: 2;
-  //grid-row: span 2;
   position: relative;
-  //position: sticky;
-  //top: 0;
-  //z-index: 2;
-  //transition-duration: 250ms;
-  //transition-property: top;
-  //transition-timing-function: var(--ease-expo);
-  //will-change: top;
-  //
-  //&.header {
-  //  transition-duration: 350ms;
-  //  top: 6rem;
-  //}
 }
 
 .inner {
   overflow: hidden;
   height: 8rem;
   margin-top: -8rem;
-  //margin-top: -8rem;
-  //position: sticky;
-  //top: 0;
-  //right: 0;
-  //display: flex;
-  //flex-direction: column;
-  //width: $value;
-  //min-height: calc(100vh - 2rem);
-  //min-height: 100vh;
-  //margin-right: -$value;
   background-color: var(--color-solid-5);
-  border-bottom-left-radius: 0.25rem;
   color: var(--color-neutral-0);
   transition-duration: 250ms;
   transition-property: margin-top;
-  //transition-property: margin-right;
   transition-timing-function: var(--ease-expo);
-  will-change: margin-top;
+  //will-change: margin-top;
 
   //&.active {
   //  background-color: var(--color-solid-5);
@@ -47,35 +19,20 @@
   //}
 
   .open & {
-    //margin-right: 0;
     transition-duration: 350ms;
     margin-top: 0;
   }
 }
 
-//.open {
-//  //margin-right: 0;
-//  transition-duration: 350ms;
-//  margin-top: 0;
-//}
-
 .button {
   position: absolute;
   top: 100%;
   right: 0;
-  //top: 0;
-  //right: 100%;
-  //height: 2.25rem;
-  //padding: 0 var(--spacing-s);
-  gap: 0.25rem;
-  //background-color: var(--color-solid-5);
+  padding: var(--spacing-s);
   background-color: var(--color-1);
-  //border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.15rem;
   font-family: var(--font-text), sans-serif;
   font-size: var(--font-size-s);
-  //font-size: var(--font-size-m);
-  //color: var(--color-neutral-0);
   color: var(--color-2);
 
   &:focus-visible {
