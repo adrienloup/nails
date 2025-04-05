@@ -15,11 +15,9 @@ export const NotificationsComponent = () => {
   const dispatch = useNotificationsDispatch();
   const state = useNotifications();
 
-  const totalNotifications = state.notifications.filter(
-    (notification) => notification.enable
-  ).length;
+  const total = state.notifications.filter((notification) => notification.enable).length;
 
-  const newNotifications = state.notifications.filter(
+  const notView = state.notifications.filter(
     (notification) => notification.enable && !notification.view
   ).length;
 
@@ -37,28 +35,21 @@ export const NotificationsComponent = () => {
     <div
       className={classNames([styles.notifications, state.open ? styles.open : ''])}
       role="complementary"
-      // style={{ top: openHeader ? '6rem' : '0px' } as CSSProperties}
     >
       <ButtonComponent
         className={styles.button}
         aria-expanded={state.open}
         onClick={onToggle}
       >
-        {newNotifications} notifs
-        {/*<BadgeComponent value={newNotifications}>*/}
+        {notView} notifs
+        {/*<BadgeComponent value={notView}>*/}
         {/*<IconComponent*/}
-        {/*  icon={totalNotifications > 0 ? 'notifications_active' : 'notifications'}*/}
+        {/*  icon={total > 0 ? 'notifications_active' : 'notifications'}*/}
         {/*/>*/}
         {/*</BadgeComponent>*/}
       </ButtonComponent>
-      <div
-        className={classNames([
-          styles.inner,
-          // state.open ? styles.open : '',
-          // newNotifications > 0 ? styles.active : '',
-        ])}
-      >
-        {totalNotifications > 0 ? (
+      <div className={styles.inner}>
+        {total > 0 ? (
           <>
             {state.notifications.map((notification: Notification) =>
               notification.enable ? (
