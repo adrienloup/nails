@@ -1,5 +1,5 @@
-import { State } from '@/src/pages/game/components/notifications/Notifications.type.ts';
-import { Notification } from '@/src/pages/game/components/notification/Notification.type.ts';
+import { State } from '@/src/generic/common/components/notifications/Notifications.type.ts';
+import { Notification } from '@/src/generic/common/components/notification/Notification.type.ts';
 
 const notifications: Notification[] = [
   {

@@ -1,13 +1,13 @@
 .dashboard {
-  grid-column: 1;
-  grid-row: 2;
+  //grid-column: 1;
+  //grid-row: 2;
   display: flex;
   flex-flow: row wrap;
   gap: var(--spacing-m);
-  padding: 2.875rem var(--spacing-m) 0;
+  padding: 2.25rem var(--spacing-m) 0;
 
-  @include desktop {
-    gap: var(--spacing-l);
-    padding: 2.875rem var(--spacing-l) 0;
-  }
+  //@include desktop {
+  //  gap: var(--spacing-l);
+  //  padding: 2.875rem var(--spacing-l) 0;
+  //}
 }

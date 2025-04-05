@@ -5,36 +5,37 @@ import { classNames } from '@/src/generic/utils/classNames.ts';
 import { ButtonComponent } from '@/src/generic/common/components/button/Button.component.tsx';
 import { NavigationComponent } from '@/src/generic/common/components/navigation/Navigation.component.tsx';
 import { SettingsComponent } from '@/src/generic/common/components/settings/Settings.component.tsx';
+import { NotificationsComponent } from '@/src/generic/common/components/notifications/Notifications.component.tsx';
 // import { IconComponent } from '@/src/generic/common/components/icon/Icon.component.tsx';
 import styles from '@/src/generic/common/components/header/Header.module.scss';
 
 export const HeaderComponent = () => {
-  console.log('HeaderComponent');
   const { t } = useTranslation();
   const [open, setOpen] = useHeader();
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && open) setOpen(false);
+      if (e.key === 'Escape') setOpen(false);
     };
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [open]);
+  }, [setOpen]);
 
   return (
     <header
       className={classNames([styles.header, open ? styles.open : ''])}
       role="banner"
     >
-      <ButtonComponent
-        className={styles.button}
-        aria-label={open ? t('common.menu.close') : t('common.menu.open')}
-        onClick={() => setOpen(!open)}
-      >
-        {/*<IconComponent icon={open ? 'menu_open' : 'menu'} />*/}
-        Menu
-      </ButtonComponent>
-      <div className={styles.inner}>
+      <div className={styles.menu}>
+        <ButtonComponent
+          className={styles.button}
+          aria-label={open ? t('common.menu.close') : t('common.menu.open')}
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+        >
+          {/*<IconComponent icon={open ? 'menu_open' : 'menu'} />*/}
+          menu
+        </ButtonComponent>
         {open ? (
           <>
             <NavigationComponent />
@@ -42,6 +43,7 @@ export const HeaderComponent = () => {
           </>
         ) : null}
       </div>
+      <NotificationsComponent />
     </header>
   );
 };

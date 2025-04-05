@@ -1,0 +1,19 @@
+.total {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: calc(100vw - var(--spacing-m) - var(--spacing-m));
+  //padding: var(--spacing-m);
+}
+
+.number {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 2.75rem;
+}
+
+.label {
+  font-size: var(--font-size-s);
+}

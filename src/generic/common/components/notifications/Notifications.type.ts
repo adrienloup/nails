@@ -1,4 +1,4 @@
-import { Notification } from '@/src/pages/game/components/notification/Notification.type.ts';
+import { Notification } from '@/src/generic/common/components/notification/Notification.type.ts';
 
 export interface State {
   notifications: Notification[];
