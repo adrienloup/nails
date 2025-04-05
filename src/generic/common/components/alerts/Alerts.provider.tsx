@@ -24,7 +24,7 @@ export const AlertsProvider = ({ children }: { children: Children }) => {
                     key={alert.id}
                     title={alert.title}
                     text={alert.text}
-                    remove={() => dispatch({ type: 'REMOVE', id: alert.id! })} // TODO
+                    remove={() => dispatch({ type: 'REMOVE', id: alert.id! })}
                   />
                 ))}
               </AlertsComponent>,

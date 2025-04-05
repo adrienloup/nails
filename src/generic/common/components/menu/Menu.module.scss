@@ -1,8 +1,8 @@
 .menu {
-  position: relative;
-  z-index: 2;
-  height: 5rem;
-  margin-top: -5rem;
+  //position: relative;
+  //z-index: 2;
+  height: 6rem;
+  margin-top: -6rem;
   transition-property: margin-top;
   transition-duration: 250ms;
   transition-timing-function: var(--ease-expo);
@@ -10,23 +10,24 @@
   //will-change: margin-top;
 
   &.open {
+    //z-index: 2;
     margin-top: 0;
     transition-duration: 350ms;
   }
 }
 
-.button {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  padding: var(--spacing-s);
-  background-color: var(--color-1);
-  border-bottom-right-radius: 0.15rem;
-  font-family: var(--font-text), sans-serif;
-  font-size: var(--font-size-s);
-  color: var(--color-2);
-
-  &:focus-visible {
-    outline-offset: -0.25rem;
-  }
-}
+//.button {
+//  position: absolute;
+//  top: 100%;
+//  left: 0;
+//  padding: var(--spacing-s);
+//  background-color: var(--color-1);
+//  border-bottom-right-radius: 0.15rem;
+//  font-family: var(--font-text), sans-serif;
+//  font-size: var(--font-size-s);
+//  color: var(--color-2);
+//
+//  &:focus-visible {
+//    outline-offset: -0.25rem;
+//  }
+//}
