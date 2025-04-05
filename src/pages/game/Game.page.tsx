@@ -12,7 +12,6 @@ const LayoutComponent = lazy(() =>
 );
 
 function GamePage() {
-  console.log('GamePage');
   const { t } = useTranslation();
 
   useTitle(t('game.titlePage'));

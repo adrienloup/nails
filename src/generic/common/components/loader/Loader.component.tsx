@@ -8,9 +8,7 @@ export const LoaderComponent = ({ className, duration = 1e3, size = 'large', ...
 
   useEffect(() => {
     if (count >= 100) return;
-
     const interval = setInterval(() => setCount((prev) => Math.min(prev + 1, 100)), duration / 100);
-
     return () => clearInterval(interval);
   }, [count, duration]);
 

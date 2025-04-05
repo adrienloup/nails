@@ -1,28 +1,45 @@
 .notification {
-  //overflow: hidden;
+  position: relative;
   display: flex;
-  //padding: var(--spacing-s);
-  //max-width: 22.5rem;
-  //background-color: var(--color-solid-6);
   font-size: var(--font-size-s);
-  //color: var(--color-neutral-2);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -0.075rem;
+    left: 0;
+    width: 100%;
+    height: 0.15rem;
+    background-color: var(--color-neutral-0);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.view {
+  opacity: 0.5;
 }
 
 .link {
   flex: 1;
-  padding: var(--spacing-s);
-  //  align-self: center;
-  //  padding: var(--spacing-xs);
-  //  letter-spacing: 0.025rem;
-  //  text-transform: uppercase;
-  //  font-family: var(--font-text-bold), sans-serif;
-  //line-height: 1.25;
-  //font-size: inherit;
-  //color: inherit;
-  //
-  //  &:focus-visible {
-  //    outline-offset: calc(-1 * var(--outline));
-  //  }
+  padding: var(--spacing-s) var(--spacing-m);
+  line-height: 1.2;
+  font-size: inherit;
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline-offset: -0.25rem;
+  }
 }
 
 .button {
@@ -30,27 +47,11 @@
   align-items: center;
   justify-content: center;
   padding: var(--spacing-s);
-  background-color: var(--color-solid-6);
+  background-color: var(--color-solid-5);
   font-size: inherit;
   color: inherit;
-
-  //.animate & {
-  //  animation: Appear 800ms var(--ease-expo);
-  //  //will-change: background-color;
-  //}
 
   &:focus-visible {
     outline-offset: -0.25rem;
   }
 }
-//
-//.animate {
-//  animation: Appear 800ms var(--ease-expo);
-//  //will-change: background-color;
-//}
-//
-//@keyframes Appear {
-//  0% {
-//    background-color: var(--color-solid-4);
-//  }
-//}

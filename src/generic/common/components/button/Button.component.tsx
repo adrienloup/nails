@@ -11,12 +11,14 @@ export const ButtonComponent = ({
   disabled,
   innerRef,
   onClick,
+  triggerClick,
   ...props
 }: Button<HTMLButtonElement & HTMLAnchorElement>) => {
   const link = (
     <Link
       to={to!}
       className={classNames([styles.button, className])}
+      onClick={triggerClick}
       {...props}
     >
       {children}

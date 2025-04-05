@@ -5,4 +5,8 @@ export interface State {
   open: boolean;
 }
 
-export type Action = { type: 'ENABLE'; id: string } | { type: 'DISABLE'; id: string } | { type: 'TOGGLE' };
+export type Action =
+  | { type: 'ENABLE'; id: string }
+  | { type: 'DISABLE'; id: string }
+  | { type: 'VIEW'; id: string }
+  | { type: 'TOGGLE' };

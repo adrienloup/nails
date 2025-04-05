@@ -7,6 +7,6 @@ export interface Button<T> extends ButtonAttributes<T> {
   to?: string;
   disabled?: boolean;
   innerRef?: RefObject<HTMLButtonElement>;
-  // onClick?: (event: React.MouseEvent<T, MouseEvent>) => void;
   onClick?: MouseEventHandler<T>;
+  triggerClick?: MouseEventHandler<T>;
 }

@@ -15,7 +15,13 @@ export const NotificationsComponent = () => {
   const dispatch = useNotificationsDispatch();
   const state = useNotifications();
 
-  const enabledNotifications = state.notifications.filter((notification) => notification.enable).length;
+  const totalNotificattions = state.notifications.filter(
+    (notification) => notification.enable
+  ).length;
+
+  const newNotifications = state.notifications.filter(
+    (notification) => notification.enable && !notification.view
+  ).length;
 
   const onToggle = () => dispatch({ type: 'TOGGLE' });
 
@@ -36,7 +42,7 @@ export const NotificationsComponent = () => {
         className={classNames([
           styles.inner,
           state.open ? styles.open : '',
-          enabledNotifications > 0 ? styles.active : '',
+          // newNotifications > 0 ? styles.active : '',
         ])}
       >
         <ButtonComponent
@@ -44,11 +50,11 @@ export const NotificationsComponent = () => {
           aria-expanded={state.open}
           onClick={onToggle}
         >
-          <BadgeComponent value={enabledNotifications}>
+          <BadgeComponent value={newNotifications}>
             {/*<IconComponent icon="notifications_active" />*/}
           </BadgeComponent>
         </ButtonComponent>
-        {enabledNotifications > 0 ? (
+        {totalNotificattions > 0 ? (
           state.notifications.map((notification: Notification) =>
             notification.enable ? (
               <NotificationComponent
